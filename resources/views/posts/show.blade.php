@@ -12,7 +12,7 @@
 
             {{-- Col 1 --}}
 
-            <div class="twelve columns"><h2>{{ $post->title }}</h2></div>
+            <div class="twelve columns"><h2>{{ $post->titre }}</h2></div>
 
         </div>
 
@@ -21,7 +21,7 @@
         {{-- Catégories listées --}}
 
         <div class="twelve columns"><H6>Categorie / Sub-Categorie</H6></div>
-        {{--{{ $categorie }} / {{ $sub_categorie }}--}}
+        {{ $post->id_categorie }} / {{ $post->id_sous_categorie }}
 
         {{-- Row 3 --}}
 
@@ -51,11 +51,10 @@
 
                 <h4>Vidéo</h4>
 
-                <iframe width="320" height="440" src="{{ $post->url }}/embed" frameborder="0"></iframe>
+                <iframe width="320" height="440" src="{{ $post->url }}embed" frameborder="0"></iframe>
 
             </div>
 
         </div>
-
 
 @endsection

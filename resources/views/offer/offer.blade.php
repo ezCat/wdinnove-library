@@ -8,17 +8,17 @@
 
     <h1>Proposer votre exercice</h1>
 
-    {!! Form::open() !!}
+    {!! Form::open(['url' => route('offer.store')]) !!}
         {!! Form::label('', 'Titre') !!}
-        {!! Form::text('title', null, ['class' => 'u-full-width']) !!}<br><br>
+        {!! Form::text('titre', null, ['class' => 'u-full-width']) !!}<br><br>
 
         {!! Form::label('', 'Catégorie') !!}
         {!! Form::select('id_categorie', $categories, null,['class' => 'u-full-width']) !!}<br><br>
 
         {!! Form::label('', 'Site d\'origine de la vidéo') !!}
-        {!! Form::radio('type_video', 1) !!}YouTube<br>
-        {!! Form::radio('type_video', 2) !!}Vine<br>
-        {!! Form::radio('type_video', 3) !!}Instagram<br>
+        {!! Form::radio('id_type_video', 1) !!} YouTube<br>
+        {!! Form::radio('id_type_video', 2) !!} Vine<br>
+        {!! Form::radio('id_type_video', 3) !!} Instagram<br>
 
         <br>
 
@@ -26,10 +26,10 @@
         {!! Form::text('url', null, ['class' => 'u-full-width', 'placeholder' => '']) !!}<br><br>
 
         {!! Form::label('', 'Schéma') !!}
-        {!! Form::file('image') !!}<br><br>
+        {!! Form::text('image', null, ['class' => 'u-full-width', 'placeholder' => '']) !!}<br><br>
 
         {!! Form::label('', 'Description') !!}
-        {!! Form::textarea('content', null, ['class' => 'u-full-width', 'placeholder' => 'Cet exercice a pour objectif de..']) !!}<br><br>
+        {!! Form::textarea('description', null, ['class' => 'u-full-width', 'placeholder' => 'Cet exercice a pour objectif de..']) !!}<br><br>
 
         <button class="button-primary">Envoyer</button>
 

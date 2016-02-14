@@ -10,15 +10,11 @@
 
         <div class="row">
 
-            <h1>{{ $post->title }}</h1><hr>
+            <h1>{{ $post->titre }}</h1><hr>
 
         </div>
 
         <div class="row">
-
-            <div class="four columns">
-                a
-            </div>
 
             <div class="eight columns">
                 {{ $post->description }}

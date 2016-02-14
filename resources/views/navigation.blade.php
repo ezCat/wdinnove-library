@@ -4,7 +4,7 @@ use App\Http\Requests;
 use Illuminate\Support\Facades\DB;
 
 $categories = DB::table('categories')->get();
-$sub_categories = DB::table('sub_categories')->get();
+$sous_categories = DB::table('sous_categories')->get();
 
 ?>
 
@@ -110,10 +110,10 @@ $sub_categories = DB::table('sub_categories')->get();
             <li class="dropdown"><a href="{{ route('practice.index') }}" class="dropdown-toggle" data-toggle="dropdown">Bibliothèque <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     @foreach($categories as $categorie)
-                    <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ $categorie->name }}</a>
+                    <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ $categorie->libelle_categorie }}</a>
                         <ul class="dropdown-menu">
-                            @foreach($sub_categories as $sub_categorie)
-                                <li><a href="#">{{ $sub_categorie->name }}</a></li>
+                            @foreach($sous_categories as $sous_categorie)
+                                <li><a href="#">{{ $sous_categorie->libelle_sous_categorie }}</a></li>
                             @endforeach
                         </ul>
                     </li>
@@ -123,7 +123,7 @@ $sub_categories = DB::table('sub_categories')->get();
 
 
             <li><a href='{{ route('prop_exo') }}'>Proposer un exercice</a></li>
-            <li><a href='{{ route('about') }}'>A propos</a></li>
+            {{--<li><a href='{{ route('about') }}'>A propos</a></li>--}}
             <li><a href='{{ route('contactus') }}'>Contact</a></li>
             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Adminsitration <b
                             class="caret"></b></a>

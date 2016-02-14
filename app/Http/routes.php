@@ -27,7 +27,10 @@ Route::get('proposer-un-exercice', ['as' => 'prop_exo', 'uses' => 'OffersControl
 
 Route::resource('practice', 'PostsController');
 
+Route::resource('offer', 'OffersController');
+
 Route::get('admin/list', ['as' => 'admin.list', 'uses' => 'AdminController@listAdmin']);
+
 
 /*
 |--------------------------------------------------------------------------

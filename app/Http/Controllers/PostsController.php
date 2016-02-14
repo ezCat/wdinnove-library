@@ -31,17 +31,17 @@ class PostsController extends Controller
      */
     public function create()
     {
-        $req_categories = DB::table('categories')->select('id', 'name')->get();
-        $req_sub_categories = DB::table('sub_categories')->select('id', 'name')->get();
+        $req_categories = DB::table('categories')->select('id', 'libelle_categorie')->get();
+        $req_sous_categories = DB::table('sous_categories')->select('id', 'libelle_sous_categorie')->get();
         $categories = array();
-        $sub_categories = array();
+        $sous_categories = array();
         foreach($req_categories as $categorie) {
-            $categories[$categorie->id] = $categorie->name;
+            $categories[$categorie->id] = $categorie->libelle_categorie;
         }
-        foreach($req_sub_categories as $categorie) {
-            $sub_categories[$categorie->id] = $categorie->name;
+        foreach($req_sous_categories as $categorie) {
+            $sous_categories[$categorie->id] = $categorie->libelle_sous_categorie;
         }
-        return view('posts.create', compact('categories', 'sub_categories'));
+        return view('posts.create', compact('categories', 'sous_categories'));
     }
     /**
      * Store a newly created resource in storage.
@@ -75,8 +75,15 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
+        $req_etats = DB::table('etats')->select('id', 'libelle_etat')->get();
+        $etats = array();
+        foreach($req_etats as $etat) {
+            $etats[$etat->id] = $etat->libelle_etat;
+        }
+
         $post = Post::findOrFail($id);
-        return view('posts.edit', compact('post'));
+
+        return view('posts.edit', compact('post', 'etats'));
     }
     /**
      * Update the specified resource in storage.
