@@ -19,7 +19,9 @@
 
 @yield('navigation')
 
+<br>
+
 @yield('content')
 
-<div class="footer alignc">@WDinnove, 2016.</div>
-<br>
+{{--<div class="footer alignc">@WDinnove, 2016.</div>--}}
+{{--<br>--}}
