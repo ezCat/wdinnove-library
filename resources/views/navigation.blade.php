@@ -91,7 +91,7 @@ $sous_categories = DB::table('sous_categories')->get();
 
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
         <ul class="nav navbar-nav">
-            <li><a href='{{ route('home') }}'>Home</a></li>
+            <li><a href='{{ route('accueil') }}'>Home</a></li>
 
             {{--<li class='has-sub'><a href='{{ route('practice.index') }}'>Bibliothèque</a>--}}
             {{--<ul>--}}

@@ -11,26 +11,27 @@
 |
 */
 
-Route::get('home', ['as' => 'home', function(){
-    return view('home');
-}]);
-
-Route::get('about', ['as' => 'about', function(){
-    return view('about');
+Route::get('accueil', ['as' => 'accueil', function(){
+    return view('accueil');
 }]);
 
 Route::get('contact', ['as' => 'contactus', function(){
     return view('contact.contact');
 }]);
 
+Route::get('about', ['as' => 'about', function(){
+    return view('about');
+}]);
+
+
+//creer un autre nom de controller
+Route::resource('offer', 'OffersController');
 Route::get('proposer-un-exercice', ['as' => 'prop_exo', 'uses' => 'OffersController@index']);
 
-Route::resource('practice', 'PostsController');
 
-Route::resource('offer', 'OffersController');
-
+//a faire sauter tout dans un controller admin, les deux routingcorresponde a la meme chose
 Route::get('admin/list', ['as' => 'admin.list', 'uses' => 'AdminController@listAdmin']);
-
+Route::resource('practice', 'PostsController');
 
 /*
 |--------------------------------------------------------------------------
