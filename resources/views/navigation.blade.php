@@ -125,49 +125,17 @@ $sous_categories = DB::table('sous_categories')->get();
             <li><a href='{{ route('prop_exo') }}'>Proposer un exercice</a></li>
             {{--<li><a href='{{ route('about') }}'>A propos</a></li>--}}
             <li><a href='{{ route('contactus') }}'>Contact</a></li>
+
+            @if(\Illuminate\Support\Facades\Auth::check())
             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Adminsitration <b
                             class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li><a href='{{ route('practice.create') }}'>Ajouter un exercice</a></li>
-                    <li><a href='{{ route('admin.list') }}'>Modifier un exercice</a></li>
-                    <li><a href='#'>Valider un exercice</a></li>
+                    <li><a href='{{ route('admin.posts.create') }}'>Ajouter un exercice</a></li>
+                    <li><a href='{{ route('admin.posts.index') }}'>Modifier un exercice</a></li>
+                    <li><a href='{{ route('admin.posts.index') }}'>Valider un exercice</a></li>
                 </ul>
             </li>
+            @endif
         </ul>
-    </div><!-- /.navbar-collapse --></nav>
-
-<!--Ancien menu responsive -->
-
-{{--<div id='cssmenu' style="margin-bottom: 30px;">--}}
-{{--<ul>--}}
-{{--<li style="margin-right: 40px"><a href='{{ route('home') }}' style="padding-top: 0; padding-left: 10px; padding-bottom: 10px"><img src="{{ asset('/img/dribble.png') }}"></a></li>--}}
-{{--<li><a href='{{ route('home') }}'>Home</a></li>--}}
-
-
-{{--<li class='has-sub'><a href='{{ route('practice.index') }}'>Bibliothèque</a>--}}
-{{--<ul>--}}
-{{--@foreach($categories as $categorie)--}}
-{{--<li class='has-sub'><a href='#'>{{ $categorie->name }}</a>--}}
-{{--<ul>--}}
-{{--@foreach($sub_categories as $sub_categorie)--}}
-{{--<li><a href='{{ route('practice.index') }}'>{{ $sub_categorie->name }}</a></li>--}}
-{{--@endforeach--}}
-{{--</ul>--}}
-{{--</li>--}}
-{{--@endforeach--}}
-{{--</ul>--}}
-{{--</li>--}}
-
-{{--<li><a href='{{ route('prop_exo') }}'>Proposer un exercice</a></li>--}}
-{{--<li><a href='{{ route('about') }}'>A propos</a></li>--}}
-{{--<li><a href='{{ route('contactus') }}'>Contact</a></li>--}}
-{{--<li class="has-sub"><a href=''>Adminsitration</a>--}}
-{{--<ul>--}}
-{{--<li><a href='{{ route('practice.create') }}'>Ajouter un exercice</a></li>--}}
-{{--<li><a href='{{ route('admin.list') }}'>Modifier un exercice</a></li>--}}
-{{--<li><a href='#'>Valider un exercice</a></li>--}}
-{{--</ul>--}}
-{{--</li>--}}
-{{--</ul>--}}
-{{--</div>--}}
-
+    </div><!-- /.navbar-collapse -->
+</nav>

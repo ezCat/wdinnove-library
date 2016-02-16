@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('accueil', ['as' => 'accueil', function(){
+Route::get('/', ['as' => 'accueil', function(){
     return view('accueil');
 }]);
 
@@ -29,7 +29,7 @@ Route::resource('offer', 'OffersController');
 Route::get('proposer-un-exercice', ['as' => 'prop_exo', 'uses' => 'OffersController@index']);
 
 
-//a faire sauter tout dans un controller admin, les deux routingcorresponde a la meme chose
+//a faire sauter tout dans un controller admin, les deux routing correspondent a la meme chose
 Route::get('admin/list', ['as' => 'admin.list', 'uses' => 'AdminController@listAdmin']);
 Route::resource('practice', 'PostsController');
 
@@ -44,6 +44,12 @@ Route::resource('practice', 'PostsController');
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+//    Route::get('/home', 'HomeController@index');
+
+    Route::group(['namespace' => 'Admin' ,'prefix' => 'admin'], function(){
+        route::resource('posts', 'PostsController');
+    });
 });
