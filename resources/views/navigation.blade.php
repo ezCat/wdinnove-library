@@ -9,8 +9,8 @@ $sous_categories = DB::table('sous_categories')->get();
 ?>
 
 <head>
-    <link rel="stylesheet" href="{{ asset('/css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/bootstrap-theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/css/bootstrap-theme.css') }}">
 
     <style>
         .marginBottom-0 {
@@ -86,7 +86,7 @@ $sous_categories = DB::table('sous_categories')->get();
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#" target="_blank"><span><img width="30px" src="{{asset('img/dribble3.png')}}"></span></a>
+        <a class="navbar-brand" href="#" target="_blank"><span><img width="30px" src="{{asset('public/img/dribble3.png')}}"></span></a>
     </div>
 
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
