@@ -8,7 +8,7 @@
 
         <h1>Editer</h1>
 
-        {!! Form::open(['method' => 'put', 'url' => route('posts.update', $post) ]) !!}
+        {!! Form::open(['method' => 'put', 'url' => route('practice.update', $post) ]) !!}
 
         {!! Form::label('', 'Titre') !!}
         {!! Form::text('titre', $post->titre, ['class' => 'u-full-width']) !!}<br><br>

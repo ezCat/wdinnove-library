@@ -16,6 +16,9 @@
         {!! Form::label('', 'Catégorie') !!}
         {!! Form::select('id_categorie', $categories, null,['class' => 'u-full-width']) !!}<br><br>
 
+        {!! Form::label('', 'Sous-catégorie') !!}
+        {!! Form::select('id_sous_categorie', $sous_categories, null,['class' => 'u-full-width']) !!}<br><br>
+
         {!! Form::label('', 'Site d\'origine de la vidéo') !!}
         {!! Form::radio('id_type_video', 1) !!} YouTube<br>
         {!! Form::radio('id_type_video', 2) !!} Vine<br>
@@ -26,7 +29,7 @@
         {!! Form::label('', 'URL de la vidéo') !!}
         {!! Form::text('url', null, ['class' => 'u-full-width', 'placeholder' => '']) !!}<br><br>
 
-        {!! Form::label('', 'URL du schéma') !!}
+        {!! Form::label('', 'Schéma') !!}
         {!! Form::text('image', null, ['class' => 'u-full-width', 'placeholder' => '']) !!}<br><br>
 
         {!! Form::label('', 'Description') !!}

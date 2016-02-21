@@ -20,7 +20,7 @@
                 {{ $post->description }}
             </div>
 
-            <p><a href="{{ route('posts.show', $post->id) }}"><button class="button-primary">Voir</button></a></p>
+            <p><a href="{{ route('practice.show', $post->id) }}"><button class="button-primary">Voir</button></a></p>
 
         </div>
 

@@ -37,14 +37,14 @@ body{
 /* Bigger than 550 */
 @media (min-width: 550px) {
   .jumbo{
-    height: 330px;
+    height: 320px;
   }
 }
 
 /* Bigger than 750 */
 @media (min-width: 750px) {
   .jumbo{
-    height: 260px;
+    height: 280px;
   }
 }
 

@@ -31,16 +31,11 @@ class PostsController extends Controller
     public function create()
     {
         $req_categories = DB::table('categories')->select('id', 'libelle_categorie')->get();
-        $req_sous_categories = DB::table('sous_categories')->select('id', 'libelle_sous_categorie')->get();
         $categories = array();
-        $sous_categories = array();
         foreach($req_categories as $categorie) {
             $categories[$categorie->id] = $categorie->libelle_categorie;
         }
-        foreach($req_sous_categories as $categorie) {
-            $sous_categories[$categorie->id] = $categorie->libelle_sous_categorie;
-        }
-        return view('posts.create', compact('categories', 'sous_categories'));
+        return view('posts.create', compact('categories'));
     }
     /**
      * Store a newly created resource in storage.
@@ -61,7 +56,9 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        $post = Post::findOrFail($id);
+        $post = Post::where('posts.id', '=', $id)
+            ->join('categories', 'categories.id', '=', 'posts.id_categorie')
+            ->findOrFail($id);
         return view('posts.show', compact('post'));
     }
 
@@ -73,15 +70,7 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        $req_etats = DB::table('etats')->select('id', 'libelle_etat')->get();
-        $etats = array();
-        foreach($req_etats as $etat) {
-            $etats[$etat->id] = $etat->libelle_etat;
-        }
-
-        $post = Post::findOrFail($id);
-
-        return view('posts.edit', compact('post', 'etats'));
+        //
     }
     /**
      * Update the specified resource in storage.
@@ -92,9 +81,7 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $post = Post::findOrFail($id);
-        $post->update($request->all());
-        return redirect(route('posts.edit', $id));
+        //
     }
     /**
      * Remove the specified resource from storage.

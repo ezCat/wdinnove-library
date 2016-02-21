@@ -62,8 +62,8 @@ $sous_categories = DB::table('sous_categories')->get();
         }
     </style>
 
-    <script src="{{asset('js/jquery-2.2.0.js')}}" type="text/javascript"></script>
-    <script src="{{ asset('/js/bootstrap.js') }}"></script>
+    <script src="{{asset('public/js/jquery-2.2.0.js')}}" type="text/javascript"></script>
+    <script src="{{ asset('public//js/bootstrap.js') }}"></script>
     <script>
         (function ($) {
             $(document).ready(function () {

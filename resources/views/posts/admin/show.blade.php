@@ -20,8 +20,8 @@
 
         {{-- Catégories listées --}}
 
-        <div class="twelve columns"><H5>Catégorie</H5></div>
-        <h5>{{ $post->libelle_categorie }}</h5>
+        <div class="twelve columns"><H6>Categorie / Sub-Categorie</H6></div>
+        {{ $post->id_categorie }} / {{ $post->id_sous_categorie }}
 
         {{-- Row 3 --}}
 
