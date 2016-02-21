@@ -107,7 +107,7 @@ $sous_categories = DB::table('sous_categories')->get();
             {{--</ul>--}}
 
 
-            <li class="dropdown"><a href="{{ route('practice.index') }}" class="dropdown-toggle" data-toggle="dropdown">Bibliothèque <b class="caret"></b></a>
+            <li class="dropdown"><a href="{{ route('posts.index') }}" class="dropdown-toggle" data-toggle="dropdown">Bibliothèque <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     @foreach($categories as $categorie)
                     <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ $categorie->libelle_categorie }}</a>
@@ -122,7 +122,7 @@ $sous_categories = DB::table('sous_categories')->get();
             </li>
 
 
-            <li><a href='{{ route('prop_exo') }}'>Proposer un exercice</a></li>
+            <li><a href='{{ route('posts.create') }}'>Proposer un exercice</a></li>
             {{--<li><a href='{{ route('about') }}'>A propos</a></li>--}}
             <li><a href='{{ route('contactus') }}'>Contact</a></li>
 

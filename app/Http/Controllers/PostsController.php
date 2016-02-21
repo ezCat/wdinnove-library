@@ -6,9 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Post;
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Input;
 
 class PostsController extends Controller
 {
@@ -19,8 +17,9 @@ class PostsController extends Controller
      */
     public function index()
     {
-//        $posts = DB::table('posts')->get();
-        $posts = Post::get();
+        $posts = DB::table('posts')
+            ->where('id_etat', '=', 3)
+            ->get();
         return view('posts.index', compact('posts'));
     }
 
@@ -50,7 +49,6 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-//        dd(Input::get());
         Post::create($request->all());
         $posts = Post::get();
         return view('posts.index', compact('posts'));
@@ -90,12 +88,13 @@ class PostsController extends Controller
      *
      * @param  int  $id
      * @return Response
+     *
      */
     public function update(Request $request, $id)
     {
         $post = Post::findOrFail($id);
         $post->update($request->all());
-        return redirect(route('practice.edit', $id));
+        return redirect(route('posts.edit', $id));
     }
     /**
      * Remove the specified resource from storage.
