@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\AdminPost;
 use Illuminate\Http\Request;
 
 use App\Post;
@@ -25,8 +26,8 @@ class PostsController extends Controller
 
     public function index()
     {
-        $posts = Post::get();
-        return view('admin.posts.index', compact('posts'));
+        $posts = AdminPost::get();
+        return view('posts.admin.index', compact('posts'));
     }
 
     /**
@@ -46,7 +47,7 @@ class PostsController extends Controller
         foreach($req_sous_categories as $categorie) {
             $sous_categories[$categorie->id] = $categorie->libelle_sous_categorie;
         }
-        return view('admin.posts.create', compact('categories', 'sous_categories'));
+        return view('posts.admin.create', compact('categories', 'sous_categories'));
     }
     /**
      * Store a newly created resource in storage.
@@ -56,8 +57,8 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         Post::create($request->all());
-        $posts = Post::get();
-        return view('admin.posts.index', compact('posts'));
+        $posts = AdminPost::get();
+        return view('posts.admin.index', compact('posts'));
     }
     /**
      * Display the specified resource.
@@ -67,8 +68,8 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        $post = Post::findOrFail($id);
-        return view('admin.posts.show', compact('post'));
+        $post = AdminPost::findOrFail($id);
+        return view('posts.admin.show', compact('post'));
     }
 
     /**
@@ -84,10 +85,32 @@ class PostsController extends Controller
         foreach($req_etats as $etat) {
             $etats[$etat->id] = $etat->libelle_etat;
         }
+        $req_categories = DB::table('categories')->select('id', 'libelle_categorie')->get();
+        $req_sous_categories = DB::table('sous_categories')->select('id', 'libelle_sous_categorie')->get();
+        $categories = array();
+        $sous_categories = array();
+        foreach($req_categories as $categorie) {
+            $categories[$categorie->id] = $categorie->libelle_categorie;
+        }
+        foreach($req_sous_categories as $categorie) {
+            $sous_categories[$categorie->id] = $categorie->libelle_sous_categorie;
+        }
 
-        $post = Post::findOrFail($id);
+        $post = AdminPost::findOrFail($id);
 
-        return view('admin.posts.edit', compact('post', 'etats'));
+        return view('posts.admin.edit', compact('post', 'etats', 'categories', 'sous_categories'));
+    }
+
+    /**
+     * Show the form for validate the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function valid()
+    {
+        $posts = DB::table('posts')->get();
+        return view('posts.admin.index', compact('posts'));
     }
     /**
      * Update the specified resource in storage.
@@ -98,7 +121,7 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $post = Post::findOrFail($id);
+        $post = AdminPost::findOrFail($id);
         $post->update($request->all());
         return redirect(route('admin.posts.edit', $id));
     }

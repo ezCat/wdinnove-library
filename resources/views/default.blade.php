@@ -7,6 +7,8 @@
     <script src="{{asset('public/js/jquery-2.2.0.js')}}" type="text/javascript"></script>
     {{--<link rel="stylesheet" href="{{ asset('/css/menubar.css') }}">--}}
     {{--<script src="{{ asset('/js/menubar.js') }}"></script>--}}
+    {{--<link rel="stylesheet" href="{{ asset('public/css/menubar.css') }}">--}}
+    {{--<link rel="stylesheet" href="{{ asset('public/js/menubar.js') }}">--}}
     <link rel="stylesheet" href="{{ asset('public/css/skeleton.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/normalize.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/custom.css') }}">

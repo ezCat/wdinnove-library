@@ -35,6 +35,11 @@
         {!! Form::label('', 'Description') !!}
         {!! Form::textarea('description', null, ['class' => 'u-full-width', 'placeholder' => 'Cet exercice a pour objectif de..']) !!}<br><br>
 
+        {!! Form::label('', 'Etat du post') !!}
+        {!! Form::radio('id_etat', 1) !!} Offer<br>
+        {!! Form::radio('id_etat', 2) !!} Offline<br>
+        {!! Form::radio('id_etat', 3) !!} Online<br><br>
+
         <button class="button-primary">Envoyer</button>
 
     {!! Form::close() !!}

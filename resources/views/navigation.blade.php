@@ -8,6 +8,36 @@ $sous_categories = DB::table('sous_categories')->get();
 
 ?>
 
+{{--<head>--}}
+    {{--<link rel="stylesheet" href="{{ asset('public/css/menubar.css') }}">--}}
+    {{--<link rel="stylesheet" href="{{ asset('public/js/menubar.js') }}">--}}
+{{--</head>--}}
+
+{{--<div id='cssmenu'>--}}
+    {{--<ul>--}}
+        {{--<li><a href='#'><img src="{{asset('public/img/basketball-basket.png')}}" style="height: 5%"></a></li>--}}
+        {{--<li><a href='#'>Home</a></li>--}}
+        {{--<li class='active'><a href='#'>Products</a>--}}
+            {{--<ul>--}}
+                {{--<li><a href='#'>Product 1</a>--}}
+                    {{--<ul>--}}
+                        {{--<li><a href='#'>Sub Product</a></li>--}}
+                        {{--<li><a href='#'>Sub Product</a></li>--}}
+                    {{--</ul>--}}
+                {{--</li>--}}
+                {{--<li><a href='#'>Product 2</a>--}}
+                    {{--<ul>--}}
+                        {{--<li><a href='#'>Sub Product</a></li>--}}
+                        {{--<li><a href='#'>Sub Product</a></li>--}}
+                    {{--</ul>--}}
+                {{--</li>--}}
+            {{--</ul>--}}
+        {{--</li>--}}
+        {{--<li><a href='#'>About</a></li>--}}
+        {{--<li><a href='#'>Contact</a></li>--}}
+    {{--</ul>--}}
+{{--</div>--}}
+
 <head>
     <link rel="stylesheet" href="{{ asset('public/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/bootstrap-theme.css') }}">
@@ -86,20 +116,20 @@ $sous_categories = DB::table('sous_categories')->get();
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#" target="_blank"><span><img width="30px" src="{{asset('public/img/dribble3.png')}}"></span></a>
+        <a class="navbar-brand" href="{{ url('/login') }}"><span><img width="30px" src="{{asset('public/img/dribble3.png')}}"></span></a>
     </div>
 
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
         <ul class="nav navbar-nav">
             <li><a href='{{ route('accueil') }}'>Home</a></li>
 
-            {{--<li class='has-sub'><a href='{{ route('practice.index') }}'>Bibliothèque</a>--}}
+            {{--<li class='has-sub'><a href='{{ route('posts.index') }}'>Bibliothèque</a>--}}
             {{--<ul>--}}
             {{--@foreach($categories as $categorie)--}}
             {{--<li class='has-sub'><a href='#'>{{ $categorie->name }}</a>--}}
             {{--<ul>--}}
             {{--@foreach($sub_categories as $sub_categorie)--}}
-            {{--<li><a href='{{ route('practice.index') }}'>{{ $sub_categorie->name }}</a></li>--}}
+            {{--<li><a href='{{ route('posts.index') }}'>{{ $sub_categorie->name }}</a></li>--}}
             {{--@endforeach--}}
             {{--</ul>--}}
             {{--</li>--}}
@@ -110,20 +140,21 @@ $sous_categories = DB::table('sous_categories')->get();
             <li class="dropdown"><a href="{{ route('posts.index') }}" class="dropdown-toggle" data-toggle="dropdown">Bibliothèque <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     @foreach($categories as $categorie)
-                    <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ $categorie->libelle_categorie }}</a>
-                        <ul class="dropdown-menu">
-                            @foreach($sous_categories as $sous_categorie)
-                                <li><a href="#">{{ $sous_categorie->libelle_sous_categorie }}</a></li>
-                            @endforeach
-                        </ul>
-                    </li>
+                    {{--<li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ $categorie->libelle_categorie }}</a>--}}
+                        {{--<ul class="dropdown-menu">--}}
+                            {{--@foreach($sous_categories as $sous_categorie)--}}
+                                {{--<li><a href="#">{{ $sous_categorie->libelle_sous_categorie }}</a></li>--}}
+                            {{--@endforeach--}}
+                        {{--</ul>--}}
+                    {{--</li>--}}
+                        <li class="dropdown"><a href="{{ route('posts.index', ['categorie' => $categorie->id]) }}">{{ $categorie->libelle_categorie }}</a>
                     @endforeach
                 </ul>
             </li>
 
 
             <li><a href='{{ route('posts.create') }}'>Proposer un exercice</a></li>
-            {{--<li><a href='{{ route('about') }}'>A propos</a></li>--}}
+            <li><a href='{{ route('about') }}'>A propos</a></li>
             <li><a href='{{ route('contactus') }}'>Contact</a></li>
 
             @if(\Illuminate\Support\Facades\Auth::check())
@@ -132,10 +163,12 @@ $sous_categories = DB::table('sous_categories')->get();
                 <ul class="dropdown-menu">
                     <li><a href='{{ route('admin.posts.create') }}'>Ajouter un exercice</a></li>
                     <li><a href='{{ route('admin.posts.index') }}'>Modifier un exercice</a></li>
-                    <li><a href='{{ route('admin.posts.index') }}'>Valider un exercice</a></li>
+                    <li><a href='{{ route('admin.posts.valid') }}'>Valider un exercice</a></li>
                 </ul>
             </li>
             @endif
         </ul>
     </div><!-- /.navbar-collapse -->
 </nav>
+
+

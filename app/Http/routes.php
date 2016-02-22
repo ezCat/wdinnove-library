@@ -49,6 +49,7 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::group(['namespace' => 'Admin' ,'prefix' => 'admin'], function(){
         route::resource('posts', 'PostsController');
+        route::get('posts/validate', ['as' => 'admin.posts.valid', 'uses' => 'PostsController@valid']);
     });
 
     Route::resource('posts', 'PostsController');

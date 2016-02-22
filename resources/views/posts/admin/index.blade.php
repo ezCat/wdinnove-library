@@ -20,7 +20,14 @@
                 {{ $post->description }}
             </div>
 
-            <p><a href="{{ route('practice.show', $post->id) }}"><button class="button-primary">Voir</button></a></p>
+            <p>
+                @if($post->id_etat == 1)
+                    <a href="{{ route('admin.posts.edit', $post->id) }}"><button class="button-success">Valider</button></a>
+                @else
+                    <a href="{{ route('admin.posts.edit', $post->id) }}"><button class="button-primary">Editer</button></a>
+                @endif
+                    <a href="{{ route('admin.posts.show', $post->id) }}"><button class="button">Voir</button></a>
+            </p>
 
         </div>
 

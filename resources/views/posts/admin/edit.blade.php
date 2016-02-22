@@ -8,7 +8,7 @@
 
         <h1>Editer</h1>
 
-        {!! Form::open(['method' => 'put', 'url' => route('practice.update', $post) ]) !!}
+        {!! Form::open(['method' => 'put', 'url' => route('admin.posts.update', $post) ]) !!}
 
         {!! Form::label('', 'Titre') !!}
         {!! Form::text('titre', $post->titre, ['class' => 'u-full-width']) !!}<br><br>
@@ -35,11 +35,8 @@
         {!! Form::label('', 'Description') !!}
         {!! Form::textarea('description', $post->description, ['class' => 'u-full-width', 'placeholder' => 'Cet exercice a pour objectif de..']) !!}<br><br>
 
-
-        <label>
-            {!! Form::select('id_etat', $etats, $post->id_etat,['class' => 'u-full-width']) !!}<br><br>
-            Online
-        </label>
+        <label>Etat</label>
+        {!! Form::select('id_etat', $etats, $post->id_etat,['class' => 'u-full-width']) !!}<br><br>
         <br>
 
         <button class="button-primary">Envoyer</button>

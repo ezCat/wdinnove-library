@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\Http\Requests;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 
 class PostsController extends Controller
 {
@@ -17,8 +18,10 @@ class PostsController extends Controller
      */
     public function index()
     {
+        $start = Input::get('categorie');
         $posts = DB::table('posts')
             ->where('id_etat', '=', 3)
+            ->where('id_categorie', '=', $start)
             ->get();
         return view('posts.index', compact('posts'));
     }
