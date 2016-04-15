@@ -115,12 +115,12 @@
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-lg-6">
                 <i class="fa fa-facebook fa-5x" style="color: #3b5998;"></i>
-                <div class="ci-info" style="padding: 15px 120px 15px 120px">Partages tes exercices préférés, afin de faire travailler aussi tes amis.</div>
+                <div class="ci-info last-item">Partages tes exercices préférés, afin de faire travailler aussi tes amis.</div>
             </div>
 
             <div class="col-xs-12 col-sm-6 col-lg-6">
                 <i class="fa fa-group fa-5x"></i>
-                <div class="ci-info" style="padding: 15px 120px 15px 120px">Plus haut dans le menu, une fonctionnalité te permets de proposer un exercice.</div>
+                <div class="ci-info last-item">Plus haut dans le menu, une fonctionnalité te permets de proposer un exercice.</div>
             </div>
 
         </div>

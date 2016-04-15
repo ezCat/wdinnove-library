@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="{{ asset('public/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset("public/css/main.css") }}">
     <link rel="stylesheet" href="{{ asset("public/css/menubar.css") }}">
+    <link rel="stylesheet" href="{{ asset("public/css/sliders.css") }}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script src="{{ asset('public/js/jquery-2.2.0.js') }}" type="text/javascript"></script>
     <script src="{{ asset("public/js/main.js") }}" type="text/javascript"></script>
     <script src="{{ asset('public/js/modernizr.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('public/js/jquery-ui-1.10.4.custom.min.js') }}"></script>
 
     <title>WDinnove</title>
 </head>

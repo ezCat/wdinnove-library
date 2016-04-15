@@ -84,6 +84,10 @@ body {
     transform: scale(1.1);
 }
 
+h3.with-circle{
+    margin-top: 7px;
+}
+
 
 /* CARROUSSEL */
 
@@ -195,13 +199,146 @@ body {
     color: rgba(0, 0, 0, 0.5);
 }
 
+.last-item{
+    padding: 15px 120px 15px 120px;
+}
+
+
+/* FORM */
+
+.space-under{
+    margin-bottom: 20px;
+}
+
+.form-control{
+    color: #434a54;
+    border-color: #aab2bd;
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.form-control:focus {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-color: rgba(231, 76, 60, 0.5);
+}
+
+.three-logo-column{
+    font-size: 90px;
+    margin-bottom: 8px;
+}
+
+.bordering{
+    border: 1px solid #CCC;
+    border-top: none;
+    border-bottom: none;
+}
+
+.video-box{
+    padding: 20px 0 10px 0;
+}
+
+.block-hidden{
+    visibility: hidden;
+}
+
+.youtube-color, .red:hover{
+    color: #e52d27;
+}
+
+.vine-color, .green:hover{
+    color: #00a478;
+}
+
+.instagram-color, .blue:hover{
+    color: #517fa4;
+}
+
+.btn-circle-title{
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    padding-top: 3px;
+    font-size: 22px;
+    line-height: 1.42;
+    border-radius: 50%;
+    color: #fff;
+    margin-right: 10px;
+    background-color: rgb(224, 94, 82);
+    border-color: transparent;
+}
+
+.btn-submitted{
+    width: 100%;
+    height: 45px;
+}
+
+#slider-value-form{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 40px;
+}
+
+
 
 /* RESPONSIVE */
 
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+
+    .container{
+        width: 100%;
+    }
+
+    .cf-title {
+        font-size: 70px;
+    }
+
+    .last-item {
+        padding: 0;
+    }
+
+    h1{
+        font-size: 25px;
+    }
+    h3.with-circle{
+        font-size: 17px;
+        margin-top: 11px;
+    }
+
+    .bordering{
+        border: 1px solid #CCC;
+        border-right: none;
+        border-left: none;
+    }
+
+    .xs-hidden{
+        width: 20px;
+        color: rgb(217, 83, 79);
+    }
+
     .chooseOne{
         max-width: 50%;
         margin-left: 25%;
         margin-right: 25%;
     }
+
+    .show-up{
+        margin-bottom: 10px;
+    }
+
 }
