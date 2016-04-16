@@ -1,47 +1,76 @@
-@extends('default')
-
-@include('navigation')
+@extends('navigation')
 
 @section('content')
 
-    <div class="page-wrapper">
-        <div class="page-inner">
+    <div class="page-wrapper" style="min-height: 95%">
 
-            @foreach($posts as $post)
+        <?php $compteur = false; ?>
 
-                <div class="row">
+        @foreach($posts as $post)
 
-                    <h1>{{ $post->titre }}</h1>
-                    <hr>
+            @if($compteur == false)
+                <div class="row space-under">
+                    <a href="{{ route('posts.show', $post->id) }}">
+                        <div class="col-md-6 col-ld-6 col-xs-12">
+                            <div class="desc-box">
+                                <div class="icon-box">
+                                    <div class="btn btn-circle-index">
+                                        <i class="fa fa-inbox"></i>
+                                    </div>
+                                </div>
+                                <div class="desc-content">
+                                    {{ $post->titre }}<br>
+                                    @if($post->id_etat == 1)
+                                        <a href="{{ route('admin.posts.edit', $post->id) }}">
+                                            <button class="btn btn-success">Valider</button>
+                                        </a>
+                                    @else
+                                        <a href="{{ route('admin.posts.edit', $post->id) }}">
+                                            <button class="btn btn-info">Editer</button>
+                                        </a>
+                                    @endif
+                                    <a href="{{ route('admin.posts.show', $post->id) }}">
+                                        <button class="btn">Voir</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <?php $compteur = true; ?>
 
-                </div>
-
-                <div class="row">
-
-                    <div class="eight columns">
-                        {{ $post->description }}
-                    </div>
-
-                    <p>
-                        @if($post->id_etat == 1)
-                            <a href="{{ route('admin.posts.edit', $post->id) }}">
-                                <button class="button-success">Valider</button>
-                            </a>
-                        @else
-                            <a href="{{ route('admin.posts.edit', $post->id) }}">
-                                <button class="button-primary">Editer</button>
-                            </a>
-                        @endif
-                        <a href="{{ route('admin.posts.show', $post->id) }}">
-                            <button class="button">Voir</button>
+                    @else
+                        <a href="{{ route('posts.show', $post->id) }}">
+                            <div class="col-md-6 col-ld-6 col-xs-12">
+                                <div class="desc-box">
+                                    <div class="icon-box">
+                                        <div class="btn btn-circle-index">
+                                            <i class="fa fa-inbox"></i>
+                                        </div>
+                                    </div>
+                                    <div class="desc-content">
+                                        {{ $post->titre }}<br>
+                                        @if($post->id_etat == 1)
+                                            <a href="{{ route('admin.posts.edit', $post->id) }}">
+                                                <button class="btn btn-success">Valider</button>
+                                            </a>
+                                        @else
+                                            <a href="{{ route('admin.posts.edit', $post->id) }}">
+                                                <button class="btn btn-info">Editer</button>
+                                            </a>
+                                        @endif
+                                        <a href="{{ route('admin.posts.show', $post->id) }}">
+                                            <button class="btn">Voir</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </a>
-                    </p>
-
                 </div>
+                <?php $compteur = false; ?>
 
-            @endforeach
+            @endif
 
-        </div>
+        @endforeach
 
     </div>
 

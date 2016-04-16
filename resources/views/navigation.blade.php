@@ -14,7 +14,7 @@ $sous_categories = DB::table('sous_categories')->get();
 
     <ul style="float: right;">
         <li><a href="{{ url('/') }}"> Home </a></li>
-        <li><a href='{{ url('/posts') }}'> Librairie </a></li>
+        <li><a href='{{ route('posts.index') }}'> Librairie </a></li>
         <li><a href='{{ url('/posts/create') }}'> Participer </a></li>
         <li><a href='{{ url('/contact') }}'> Contact </a></li>
     </ul>

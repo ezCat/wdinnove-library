@@ -1,4 +1,4 @@
-@include('navigation')
+@extends('navigation')
 
 @section('content')
 

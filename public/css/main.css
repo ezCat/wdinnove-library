@@ -203,6 +203,52 @@ h3.with-circle{
     padding: 15px 120px 15px 120px;
 }
 
+/* DESC-BOX */
+
+.desc-box{
+    background-color: #fff;
+    padding: 10px 20px;
+    min-height: 120px;
+}
+
+.desc-box:hover{
+    -moz-box-shadow: 2px 2px 2px 0px #656565;
+    -webkit-box-shadow: 2px 2px 2px 0px #656565;
+    -o-box-shadow: 2px 2px 2px 0px #656565;
+    box-shadow: 2px 2px 2px 0px #656565;
+    transform: scale(1.01);
+}
+
+.icon-box{
+    float: left;
+    width: auto;
+}
+
+.desc-content{
+    color: #2e3436;
+    font-size: 25px;
+    padding: 20px 10px;
+    text-align: right;
+}
+
+.btn-circle-index {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    padding: 27px 0;
+    font-size: 40px;
+    line-height: 1.42;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #34495e;
+    margin-right: 20px;
+}
+
+a:link{
+    text-decoration: none;
+    color: #2e3436;
+}
+
 
 /* FORM */
 

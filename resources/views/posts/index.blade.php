@@ -1,34 +1,53 @@
-@include('navigation')
+@extends('navigation')
 
 @section('content')
 
-    <div class="page-wrapper">
-        <div class="page-inner">
+    <div class="page-wrapper" style="min-height: 95%">
 
-            @foreach($posts as $post)
+        <?php $compteur = false; ?>
 
-                <div class="row">
+        @foreach($posts as $post)
 
-                    <h1>{{ $post->titre }}</h1>
-                    <hr>
-
-                </div>
-
-                <div class="row">
-
-                    <div class="eight columns">
-                        {{ $post->description }}
+            @if($compteur == false)
+            <div class="row space-under">
+            <a href="{{ route('posts.show', $post->id) }}">
+                <div class="col-md-6 col-ld-6 col-xs-12">
+                    <div class="desc-box">
+                        <div class="icon-box">
+                            <div class="btn btn-circle-index">
+                                <i class="fa fa-inbox"></i>
+                            </div>
+                        </div>
+                        <div class="desc-content">
+                            {{ $post->titre }}
+                        </div>
                     </div>
-
-                    <p><a href="{{ route('posts.show', $post->id) }}">
-                            <button class="button-primary">Voir</button>
-                        </a></p>
-
                 </div>
+            </a>
+            <?php $compteur = true; ?>
 
-            @endforeach
+            @else
+                <a href="{{ route('posts.show', $post->id) }}">
+                    <div class="col-md-6 col-ld-6 col-xs-12">
+                        <div class="desc-box">
+                            <div class="icon-box">
+                                <div class="btn btn-circle-index">
+                                    <i class="fa fa-inbox"></i>
+                                </div>
+                            </div>
+                            <div class="desc-content">
+                                {{ $post->titre }}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                <?php $compteur = false; ?>
 
-        </div>
+            @endif
+
+        @endforeach
+
     </div>
 
 @endsection
