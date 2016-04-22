@@ -1,5 +1,7 @@
 /* FONT */
 
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,300);
+
 @font-face {
     font-family: 'Open Sans';
     src: url('fonts/open-sans.light.ttf') format('truetype');
@@ -25,7 +27,7 @@
 /* GENERAL */
 
 body {
-    font-family: "Open Sans";
+    font-family: Roboto;
     font-weight: 300;
     margin: 0;
     padding: 0;

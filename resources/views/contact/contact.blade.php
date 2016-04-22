@@ -4,38 +4,46 @@
 
 @section('content')
 
-<div class="container">
+    <div class="page-wrapper">
+        <div class="container">
 
-<h1>Contactez-nous</h1>
+            <div class="row">
+                <div class="col-lg-3 col-sm-3 col-md-3 col-xs-12">
+                    <p>Dennis</p>
+                    <p>Je réalise mes rêves en réalisant les votres.</p>
+                </div>
 
-<form>
-    <div class="row">
-        <div class="six columns">
-            <label for="exampleEmailInput">Votre adresse mail</label>
-            <input class="u-full-width" type="email" placeholder="test@mailbox.com" id="exampleEmailInput">
-        </div>
-        <div class="six columns">
-            <label for="exampleRecipientInput">Raison du mail</label>
-            <select class="u-full-width" id="exampleRecipientInput">
-                <option value="Questions">Questions ?</option>
-                <option value="Admiration">Admiration pour le créateur ?</option>
-                <option value="Problems">Un problème sur le site ?</option>
-            </select>
+                <div class="col-lg-8 col-sm-8 col-md-8 col-xs-12">
+                    <h1>Contactez-moi</h1>
+
+                    <br>
+
+                    <form>
+                        <label>Votre adresse mail</label>
+                        <input type="email" class="form-control" placeholder="test@mailbox.com">
+
+                        <br>
+
+                        <label>Raison du mail</label>
+                        <select class="form-control">
+                            <option value="Questions">Questions ?</option>
+                            <option value="Admiration">Admiration pour le créateur ?</option>
+                            <option value="Problems">Un problème sur le site ?</option>
+                        </select>
+
+                        <br>
+
+                        <label>Message</label>
+                        <textarea class="form-control" placeholder="Bonjour cher Admin.."></textarea>
+
+                        <br>
+
+                        <input type="submit" class="btn btn-danger" value="Soumettre">
+                    </form>
+
+                </div>
+            </div>
         </div>
     </div>
-    <br>
-    <label for="exampleMessage">Message</label>
-    <textarea class="u-full-width" placeholder="Bonjour cher Admin.." id="exampleMessage"></textarea>
-    <br><br>
-    <label class="example-send-yourself-copy">
-        <input type="checkbox">
-        <span class="label-body">S'envoyer une copie</span>
-    </label>
-    <br>
-    <input class="button-primary" type="submit" value="Soumettre">
-</form>
-
-
-</div>
 
 @endsection
