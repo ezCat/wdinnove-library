@@ -24,3 +24,5 @@ $sous_categories = DB::table('sous_categories')->get();
     </ul>
 
 </div>
+
+@yield('content')

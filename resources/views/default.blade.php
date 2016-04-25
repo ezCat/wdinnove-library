@@ -17,5 +17,3 @@
     <title>WDinnove</title>
 </head>
 <body>
-
-@yield('content')

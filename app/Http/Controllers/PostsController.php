@@ -20,7 +20,7 @@ class PostsController extends Controller
     {
 //        $start = Input::get('categorie');
         $posts = DB::table('posts')
-//            ->where('id_etat', '=', 3)
+            ->where('id_etat', '=', 3)
 //            ->where('id_categorie', '=', $start)
             ->get();
         return view('posts.index', compact('posts'));

@@ -36,6 +36,7 @@ body {
 .page-wrapper{
     background-color: #F3F3F3;
     padding: 25px 10% 50px 10%;
+    min-height: 94%;
 }
 .page-inner{
     background-color: #fff;
@@ -48,6 +49,33 @@ body {
 .align-center {
     text-align: center;
 }
+
+.spacing-margin{
+    height: 5%;
+}
+
+.border-right{
+    border-right: 1px solid rgba(0,0,0, 0.1);
+}
+
+
+
+/*.presentation-profil p{*/
+    /*font-size: 16px;*/
+
+/*}*/
+
+/*.round-img{*/
+    /*-webkit-border-radius: 50%;*/
+    /*-moz-border-radius: 50%;*/
+    /*border-radius: 50%;*/
+    /*width: 65%;*/
+/*}*/
+
+/*.photo-profil{*/
+    /*text-align: center;*/
+    /*margin-bottom: 15%;*/
+/*}*/
 
 /*  COLOR PALETTE */
 
@@ -211,6 +239,7 @@ h3.with-circle{
     background-color: #fff;
     padding: 10px 20px;
     min-height: 120px;
+    margin-bottom: 20px;
 }
 
 .desc-box:hover{
@@ -251,8 +280,17 @@ a:link{
     color: #2e3436;
 }
 
+.clickable-a-desc-box{
+    cursor: default;
+    color: #2e3436;
+    text-decoration: none;
+}
 
-/* FORM */
+.clickable-a-desc-box:hover{
+    color: #2e3436;
+}
+
+    /* FORM */
 
 .space-under{
     margin-bottom: 20px;
@@ -350,6 +388,10 @@ a:link{
 
     .container{
         width: 100%;
+    }
+
+    .border-right{
+        border: none;
     }
 
     .cf-title {

@@ -9,8 +9,8 @@
         @foreach($posts as $post)
 
             @if($compteur == false)
-                <div class="row space-under">
-                    <a href="{{ route('posts.show', $post->id) }}">
+                <div class="row">
+                    <a class="clickable-a-desc-box" href="{{ route('posts.show', $post->id) }}">
                         <div class="col-md-6 col-ld-6 col-xs-12">
                             <div class="desc-box">
                                 <div class="icon-box">
@@ -39,7 +39,7 @@
                     <?php $compteur = true; ?>
 
                     @else
-                        <a href="{{ route('posts.show', $post->id) }}">
+                        <a class="clickable-a-desc-box" href="{{ route('posts.show', $post->id) }}">
                             <div class="col-md-6 col-ld-6 col-xs-12">
                                 <div class="desc-box">
                                     <div class="icon-box">
