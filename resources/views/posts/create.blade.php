@@ -9,6 +9,8 @@
                 <h1>PROPOSES TON <span class="important"> EXERCICE </span>!</h1>
             </div>
 
+            <div class="col-lg-12 col-sm-12 col-xs-12">
+
             {!! Form::open(['url' => route('posts.store')]) !!}
 
             <div class="row space-under">
@@ -114,6 +116,7 @@
             </div>
 
         </div>
+    </div>
     </div>
 
     {!! Form::close() !!}

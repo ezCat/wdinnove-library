@@ -1,14 +1,4 @@
-@extends('default')
-
-<?php
-
-use App\Http\Requests;
-use Illuminate\Support\Facades\DB;
-
-$categories = DB::table('categories')->get();
-$sous_categories = DB::table('sous_categories')->get();
-
-?>
+@include('default')
 
 <div id='cssmenu'>
 
