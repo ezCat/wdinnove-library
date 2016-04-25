@@ -33,10 +33,17 @@ body {
     padding: 0;
 }
 
+html, body
+{
+    height: 100%;
+    min-height: 100%;
+}
+
 .page-wrapper{
     background-color: #F3F3F3;
     padding: 25px 10% 50px 10%;
     min-height: 94%;
+    display: block;
 }
 .page-inner{
     background-color: #fff;
@@ -289,6 +296,84 @@ a:link{
 .clickable-a-desc-box:hover{
     color: #2e3436;
 }
+
+
+
+    /* MATERIAL CARD */
+
+.card__material{
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 24px 0 0 16px;
+    position: relative;
+    min-height: 140px;
+}
+
+.card__material a{
+    text-decoration: none;
+}
+
+.card__material:hover{
+    -webkit-box-shadow: 0 0 3px #4d4d4d;
+    -moz-box-shadow: 0 0 3px #4d4d4d;
+    box-shadow: 0 0 3px #4d4d4d;
+    transform: scale(1.03);
+    transition-duration: 0.5s;
+}
+
+.card__title{
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.card__subtitle{
+    font-size: 16px;
+}
+
+.card__action__access{
+    position: absolute;
+    bottom: 13px;
+    left: 20px;
+    color: #FF1744;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.card__action__share{
+    position: absolute;
+    bottom: 13px;
+    left: 90px;
+    color: #FF1744;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.card__image{
+    width: 80px;
+    height: 80px;
+    background: #2e3436;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /* FORM */
 

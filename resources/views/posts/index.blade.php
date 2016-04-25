@@ -2,49 +2,25 @@
 
 @section('content')
 
-    <div class="page-wrapper" style="min-height: 95%">
+    <div class="page-wrapper">
 
-        <?php $compteur = false; ?>
+        <div class="row">
+            <h1><span class="important"></span></h1>
+            <h3></h3>
+
+        </div>
 
         @foreach($posts as $post)
 
-            @if($compteur == false)
-            <div class="row">
-            <a class="clickable-a-desc-box" href="{{ route('posts.show', $post->id) }}">
-                <div class="col-md-6 col-ld-6 col-xs-12">
-                    <div class="desc-box">
-                        <div class="icon-box">
-                            <div class="btn btn-circle-index">
-                                <i class="fa fa-flash"></i>
-                            </div>
-                        </div>
-                        <div class="desc-content">
-                            <p>{{ $post->titre }}</p>
-                        </div>
-                    </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <div class="card__material">
+                    <div class="card__title">{{ $post->titre }}</div>
+                    <div class="card__subtitle">{{ $post->id_categorie }}</div>
+                    <div class="card__image"></div>
+                    <a href="{{ route('posts.show', $post->id) }}"><div class="card__action__access"><i class="fa fa-reply"></i> Voir</div></a>
+                    <a href="#"><div class="card__action__share"><i class="fa fa-share-alt"></i> Partager</div></a>
                 </div>
-            </a>
-            <?php $compteur = true; ?>
-
-            @else
-                <a class="clickable-a-desc-box" href="{{ route('posts.show', $post->id) }}">
-                    <div class="col-md-6 col-ld-6 col-xs-12">
-                        <div class="desc-box">
-                            <div class="icon-box">
-                                <div class="btn btn-circle-index">
-                                    <i class="fa fa-flash"></i>
-                                </div>
-                            </div>
-                            <div class="desc-content">
-                                {{ $post->titre }}
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                </div>
-                <?php $compteur = false; ?>
-
-            @endif
+            </div>
 
         @endforeach
 
