@@ -66,24 +66,6 @@ html, body
 }
 
 
-
-/*.presentation-profil p{*/
-    /*font-size: 16px;*/
-
-/*}*/
-
-/*.round-img{*/
-    /*-webkit-border-radius: 50%;*/
-    /*-moz-border-radius: 50%;*/
-    /*border-radius: 50%;*/
-    /*width: 65%;*/
-/*}*/
-
-/*.photo-profil{*/
-    /*text-align: center;*/
-    /*margin-bottom: 15%;*/
-/*}*/
-
 /*  COLOR PALETTE */
 
 .c-flatred {
@@ -358,16 +340,28 @@ a:link{
 }
 
 
+    /* show post */
 
+.show-title{
+   font-size: 45px;
+    font-weight: 600;
+}
 
+.show-categorie{
+    font-size: 22px;
+}
 
+.show-description{
+    padding: 20px 20px 50px 10px;
+    font-size: 17px;
+    line-height: 1.7;
+    font-weight: 300;
+    text-align: justify;
+}
 
-
-
-
-
-
-
+.icon-basketball{
+    width: 8%;
+ }
 
 
 

@@ -3,60 +3,36 @@
 @section('content')
 
     <div class="page-wrapper">
-        <div class="page-inner">
 
-            {{--Row 1--}}
 
-            <div class="row">
-
-                {{-- Col 1 --}}
-
-                <div class="twelve columns"><h2>{{ $post->titre }}</h2></div>
-
+        <div class="row">
+            <div class="col-lg-6 col-xs-12 col-sm-12 col-md-6">
+                {{--Titre--}}
+                <div class="row">
+                    <h2 class="show-title">{{ $post->titre }}</h2>
+                </div>
+                <hr>
+                {{--Catégorie--}}
+                <div class="row">
+                    <span><h3 class="show-categorie"><img class="icon-basketball" src="{{asset('/public/img/basketball-256.png')}}"> &nbsp; {{ $post->libelle_categorie }}</h3></span>
+                </div>
+                <hr>
+                {{--Description--}}
+                <div class="row">
+                    <p class="show-description">{{ $post->description }}</p>
+                </div>
             </div>
 
-            {{-- Row 2--}}
 
-            {{-- Catégories listées --}}
-
-            <div class="twelve columns"><H5>Catégorie</H5></div>
-            <h5>{{ $post->libelle_categorie }}</h5>
-
-            {{-- Row 3 --}}
-
-            <div class="row">
-
-                {{-- Col 1 --}}
-
-                {{-- Description --}}
-
-                <div class="seven columns">
-
-                    <h4>Description</h4>
-
-                    <p>{{ $post->description }}</p>
-
-                </div>
-
-                {{-- Col 2 --}}
-
-                <div class="five columns">
-
-                    {{-- Schéma --}}
-
-                    {{--<h4>Schéma</h4>--}}
-
-                    {{-- Vidéo --}}
-
-                    <h4>Vidéo</h4>
-
-                    <iframe width="320" height="440" src="{{ $post->url }}embed" frameborder="0"></iframe>
-
-                </div>
-
+            {{--Vidéo--}}
+            <div class="col-lg-6 col-xs-12 col-sm-12 col-md-6">
+                @if($post->id_type_video == 1)
+                    <?php echo $post->url2; ?>
+                @endif
             </div>
 
         </div>
+
     </div>
 
 @endsection
