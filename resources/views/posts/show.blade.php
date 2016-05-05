@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="page-wrapper">
-        
+
         <div class="row">
             <div class="col-lg-6 col-xs-12 col-sm-12 col-md-6">
                 {{--Titre--}}
@@ -13,7 +13,7 @@
                 <hr>
                 {{--Catégorie--}}
                 <div class="row">
-                    <span><h3 class="show-categorie"><img class="icon-basketball" src="{{asset('public/img/basketball-256.png')}}"> &nbsp; {{ $post->libelle_categorie }}</h3></span>
+                    <span><h3 class="show-categorie"><img class="icon-basketball" src="{{asset("public/img/Basketball-256.png")}}"> &nbsp; {{ $post->libelle_categorie }}</h3></span>
                 </div>
                 <hr>
                 {{--Description--}}

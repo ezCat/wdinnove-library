@@ -359,6 +359,12 @@ a:link{
     text-align: justify;
 }
 
+@media all and (min-width: 800px){
+    .show-description{
+        padding: 30px 80px 0 20px;
+    }
+}
+
 .icon-basketball{
     width: 8%;
  }
