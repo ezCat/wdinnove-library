@@ -24,7 +24,7 @@ class PostsController extends Controller
             ->select('posts.*', 'categories.*')
             ->where('id_etat', '=', 3)
             ->get();
-        return view('welcome', compact('categories', 'posts'));
+        return view('posts.index', compact('categories', 'posts'));
     }
 
     /**
