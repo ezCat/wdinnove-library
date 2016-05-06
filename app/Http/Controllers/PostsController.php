@@ -18,12 +18,13 @@ class PostsController extends Controller
      */
     public function index()
     {
-//        $start = Input::get('categorie');
+        $categories = $posts = DB::table('categories')->get();
         $posts = DB::table('posts')
+            ->join('categories', 'posts.id_categorie', '=', 'categories.id')
+            ->select('posts.*', 'categories.*')
             ->where('id_etat', '=', 3)
-//            ->where('id_categorie', '=', $start)
             ->get();
-        return view('posts.index', compact('posts'));
+        return view('welcome', compact('categories', 'posts'));
     }
 
     /**

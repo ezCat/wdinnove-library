@@ -22,5 +22,9 @@ Route::group(['middleware' => 'web'], function () {
     });
 
     Route::resource('posts', 'PostsController');
+
+    Route::get('filter', function(){
+        return view('welcome');
+    });
 });
 

@@ -285,8 +285,8 @@ a:link{
 
 .card__material{
     background-color: #fff;
-    margin: 10px 0;
-    padding: 24px 0 0 16px;
+    margin: 0;
+    padding: 20px;
     position: relative;
     min-height: 140px;
 }
@@ -303,13 +303,23 @@ a:link{
     transition-duration: 0.5s;
 }
 
+.card__image{
+    width: 5px;
+    height: 100%;
+    background: #2e3436;
+    position: absolute;
+    top:0px;
+    left:0px;
+}
+
 .card__title{
-    font-size: 24px;
+    font-size: 18px;
     margin-bottom: 5px;
+    overflow: hidden;
 }
 
 .card__subtitle{
-    font-size: 16px;
+    font-size: 13px;
 }
 
 .card__action__access{
@@ -319,6 +329,7 @@ a:link{
     color: #FF1744;
     text-transform: uppercase;
     font-weight: 700;
+    font-size: 13px;
 }
 
 .card__action__share{
@@ -328,15 +339,7 @@ a:link{
     color: #FF1744;
     text-transform: uppercase;
     font-weight: 700;
-}
-
-.card__image{
-    width: 80px;
-    height: 80px;
-    background: #2e3436;
-    position: absolute;
-    top: 16px;
-    right: 16px;
+    font-size: 13px;
 }
 
 
