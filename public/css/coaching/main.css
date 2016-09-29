@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LeagueGothic';
+    src: url('../fonts/leaguegothic-regular-webfont.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+	font-family: 'Open Sans';
+}
+
+h2{
+	font-family: 'LeagueGothic';	
+	font-size: 50px;
+	text-transform: uppercase;
+}
+
+.navbar{
+	background-color: #474D58;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: #F1A9A0;
+    opacity: 0.7;
+    background-color: #6C7A89;
+}
+
+.hidden-except-mobile{
+	display: none;
+}
+
+.width100{
+	width: 100%;
+}
+
+.h320{
+	height: 320px;
+}
+
+.text-for-menu{
+	margin-left: 20px;
+}
+
+.little-margin-right{
+	margin-right: 8px;
+}
+
+@media all and (max-width: 700px){
+	.hidden-except-mobile{
+		display: inline-block;
+	}
+
+	.hidden-mobile{
+		display: none;
+	}
+}
+
+.list-box{
+	background: #EEEEEE;
+	padding: 10px 25px;
+	width: 100%;
+	margin: 15px 0;
+}
+
+.list-box p{
+	margin: 2px;
+}

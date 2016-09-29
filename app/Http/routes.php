@@ -26,5 +26,15 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('filter', function(){
         return view('welcome');
     });
-});
 
+    Route::group(['namespace' => 'Coaching', 'prefix' => 'coaching', 'middleware' => 'auth'], function(){
+        Route::resource('injuries', 'InjuriesController');
+        Route::resource('mailing', 'MailingController');
+        Route::resource('calendar', 'CalendarController');
+        Route::resource('reminder', 'ReminderController');
+        Route::get('home', function(){
+            return view('coaching.home');
+        });
+    });
+
+});
