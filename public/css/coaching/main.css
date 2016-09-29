@@ -72,3 +72,8 @@ h2{
 .list-box p{
 	margin: 2px;
 }
+
+.day{
+	min-height: 90px;
+	margin: 10px 0;
+}
