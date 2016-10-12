@@ -2,6 +2,9 @@
 
 <input type="hidden" id="to-active" value="calendar">
 
+<h2>Calendrier</h2>
+<hr>
+
 <?php
 
 	for ($i=0; $i < 14; $i++) { 

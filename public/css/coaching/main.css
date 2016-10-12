@@ -54,6 +54,14 @@ h2{
 	height: 320px;
 }
 
+.form-control{
+	margin-bottom: 10px;
+}
+
+.text-for-menu{
+	margin-left: 20px;
+}
+
 .little-margin-right{
 	margin-right: 8px;
 }
