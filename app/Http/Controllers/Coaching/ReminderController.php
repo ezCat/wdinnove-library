@@ -26,7 +26,7 @@ class ReminderController extends Controller
      */
     public function create()
     {
-        //
+        return view('coaching/reminder/create');
     }
 
     /**
@@ -59,7 +59,7 @@ class ReminderController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('coaching/reminder/edit');
     }
 
     /**
@@ -83,5 +83,9 @@ class ReminderController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function listing(){
+        return view('coaching.reminder.list');
     }
 }
