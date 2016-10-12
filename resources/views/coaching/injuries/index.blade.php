@@ -2,16 +2,22 @@
 
 <input type="hidden" id="to-active" value="injuries">
 
-<h2>Suivi des blessures</h2>
-
-<a class="btn btn-large btn-success width100">+ Nouvelle blessure</a>
+<div class="row">
+	<div class="col-xs-12">
+		<h2>Suivi des blessures</h2>
+	</div>
+	<div class="col-xs-12">
+		<hr class="hidden-except-mobile">
+		<button class="btn btn-success width100">+ Nouvelle blessure</button>
+	</div>			
+</div>
 
 <hr>
 
-<div class="hidden-mobile width100">
+<div class="hidden width100">
 	<div class="panel panel-default">
 	  <div class="panel-heading">
-	    <h3 class="panel-title">Liste des blessés</h3>
+	    <h3 class="panel-title">Blessures</h3>
 	  </div>
 	  <div class="panel-body">
 	  <div class="table-responsive">
@@ -51,7 +57,7 @@
 
 	<div class="panel panel-default">
 	  <div class="panel-heading">
-	    <h3 class="panel-title">Blessures cette saison</h3>
+	    <h3 class="panel-title">Historique</h3>
 	  </div>
 	  <div class="panel-body">
 	  	<div class="table-responsive">
@@ -82,8 +88,8 @@
 	</div>
 </div>
 
-<div class="hidden-except-mobile width100">
-    <h3><i class="fa fa-medkit little-margin-right"></i> Joueurs blessés</h3>
+<div class="width100">
+    <h3><i class="fa fa-medkit little-margin-right"></i> Blessures</h3>
     <hr>
 	    <div class="list-box">
 			<h4><b>Yohan Gaston</b></h4>
@@ -101,7 +107,7 @@
 	    </div>
 
     <hr>
-    <h3><i class="fa fa-medkit little-margin-right"></i> Blessures précédentes</h3>
+    <h3><i class="fa fa-medkit little-margin-right"></i> Historique</h3>
     <hr>
 	    <div class="list-box">
 			<h4><b>Yohan Gaston</b></h4>

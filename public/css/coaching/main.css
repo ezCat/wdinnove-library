@@ -22,6 +22,11 @@ h2{
 	text-transform: uppercase;
 }
 
+
+
+
+/* NAVBAR */
+
 .navbar{
 	background-color: #474D58;
 }
@@ -32,9 +37,14 @@ h2{
     background-color: #6C7A89;
 }
 
-.hidden-except-mobile{
-	display: none;
+.text-for-menu{
+	margin-left: 20px;
 }
+
+
+
+
+/* HELPER */
 
 .width100{
 	width: 100%;
@@ -44,23 +54,18 @@ h2{
 	height: 320px;
 }
 
-.text-for-menu{
-	margin-left: 20px;
-}
-
 .little-margin-right{
 	margin-right: 8px;
 }
 
-@media all and (max-width: 700px){
-	.hidden-except-mobile{
-		display: inline-block;
-	}
-
-	.hidden-mobile{
-		display: none;
-	}
+.hidden{
+	display: none;
 }
+
+
+
+
+/* UI */
 
 .list-box{
 	background: #EEEEEE;
@@ -76,4 +81,62 @@ h2{
 .day{
 	min-height: 90px;
 	margin: 10px 0;
+}
+
+.desc-box{
+	height: 55px;
+	background: #965588;
+	color: #fff;
+	margin: 10px 0;
+	padding: 10px 10px;
+	position: relative;
+	font-size: 18px;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+.logo{
+	position: absolute;
+	right: 20px;
+	bottom: 5px;
+	font-size: 2em;
+}
+
+
+
+
+
+/* TABLET */
+
+@media all and (min-width: 768px){
+	.desc-box{
+		height: 200px;
+		background: #965588;
+		color: #fff;
+		margin: 10px 0;
+		padding: 15px 10px;
+		position: relative;
+		font-size: 24px;
+		font-weight: 900;
+		text-transform: uppercase;
+	}
+
+	.logo{
+		position: absolute;
+		right: 20px;
+		bottom: 10px;
+		font-size: 0.8em;
+	}
+}
+
+/* LAPTOP */
+
+@media all and (min-width: 992px){
+
+}
+
+/* LARGE DEVICES */
+
+@media all and (min-width: 1200px){
+
 }
