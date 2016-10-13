@@ -8,5 +8,5 @@
 <form>
     <input type="text" class="form-control" placeholder="Nom du document"></input>
     <input type="text" class="form-control" placeholder="Copier le lien"></input>
-    <button class="btn btn-lg btn-primary">Envoyer</button>
+    <button class="btn btn-success">Envoyer</button>
 </form>

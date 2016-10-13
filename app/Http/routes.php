@@ -31,6 +31,7 @@ Route::group(['middleware' => 'web'], function () {
         Route::resource('injuries', 'InjuriesController');
         Route::resource('mailing', 'MailingController');
         Route::resource('calendar', 'CalendarController');
+        Route::resource('document', 'DocumentController');
         Route::get('reminder/list', ['as' => 'coaching.reminder.list', 'uses' => 'ReminderController@listing']);
         Route::resource('reminder', 'ReminderController');
         Route::get('home', function(){
