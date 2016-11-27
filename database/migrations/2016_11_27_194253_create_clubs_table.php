@@ -16,8 +16,10 @@ class CreateClubsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('main_color');
-            $table->integer('gym_id');
+            $table->integer('gym_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('gym_id')->references('id')->on('gyms');
         });
     }
 
